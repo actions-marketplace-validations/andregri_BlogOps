@@ -8,7 +8,7 @@ def local_posts_state(posts_path='./_posts/'):
 
 
 def main():
-    posts_path = os.environ["INPUT_POSTS_PATH"]
+    posts_path = os.environ["INPUT_POSTSPATH"]
 
     posts = local_posts_state(posts_path)
     my_output = f"Posts path: {posts_path}"

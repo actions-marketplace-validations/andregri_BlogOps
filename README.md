@@ -23,14 +23,14 @@ jobs:
     - name: Run action
       uses: andregri/BlogOps@master
       with:
-        posts-path: 'path/to/posts/'
+        postsPath: 'path/to/posts/'
 ```
 
 ### Inputs
 
 | Input                                             | Description                                        |
 |------------------------------------------------------|-----------------------------------------------|
-| `posts-path` | The path of the folder containing the posts (_default_ is `./_posts/`) |
+| `postsPath` | The path of the folder containing the posts (_default_ is `./_posts/`) |
 
 ### Outputs
 
