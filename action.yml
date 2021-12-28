@@ -1,6 +1,6 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
+name: 'BlogOps'
+description: 'Synchronize your github pages posts to your main blog platforms'
+author: 'Andrea Grillo'
 inputs: 
   myInput:
     description: 'Input to use'
@@ -8,5 +8,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.myInput }}
