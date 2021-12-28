@@ -2,9 +2,9 @@ name: 'BlogOps'
 description: 'Synchronize your github pages posts to your main blog platforms'
 author: 'Andrea Grillo'
 inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  posts-path:
+    description: 'Path of the posts folder'
+    default: './_posts/'
 runs:
   using: 'docker'
   image: 'Dockerfile'

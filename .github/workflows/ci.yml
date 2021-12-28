@@ -30,7 +30,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: hello_action
         with:
-          myInput: 'Mona the Octocat'
+          posts-path: './tests/posts/'
 
       # Use the output from the `hello` step
       - name: Get the action output
