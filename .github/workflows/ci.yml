@@ -24,4 +24,14 @@ jobs:
       - name: Lint
         run: |
           pip install flake8
-          flake8 main.py  
+          flake8 main.py
+
+      - name: Test action
+        uses: ./ # Uses an action in the root directory
+        id: hello_action
+        with:
+          myinput: 'Mona the Octocat'
+
+      # Use the output from the `hello` step
+      - name: Get the action output
+        run: echo "The action output is ${{ steps.hello_action.myOutput.time }}" 
