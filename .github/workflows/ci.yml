@@ -34,4 +34,4 @@ jobs:
 
       # Use the output from the `hello` step
       - name: Get the action output
-        run: echo "The action output is ${{ steps.hello_action.myOutput.time }}" 
+        run: echo "The action output is ${{ steps.hello_action.outputs.myOutput }}" 
