@@ -3,14 +3,16 @@ from dotenv import load_dotenv
 from github import Github
 from pathlib import Path
 
+
 def get_last_commit(repo_name):
     """Return last commit from repository `repo_name`"""
     access_token = os.getenv("GITHUB_ACCESS_TOKEN")
     gh = Github(access_token)
-    
+
     repo = gh.get_user().get_repo(repo_name)
-    commit = repo.get_commits()[0] # latest commit
+    commit = repo.get_commits()[0]  # latest commit
     return commit
+
 
 def get_files_in(files, dir):
     """Return a subset of `files` in `dir` path"""
@@ -20,6 +22,7 @@ def get_files_in(files, dir):
             new_files.append(file)
     return new_files
 
+
 def get_new_files(files, status):
     """Return a subset of `files` with this `status`"""
     new_files = []
@@ -27,6 +30,7 @@ def get_new_files(files, status):
         if file.status == "added":
             new_files.append(file)
     return new_files
+
 
 def main():
     load_dotenv()
