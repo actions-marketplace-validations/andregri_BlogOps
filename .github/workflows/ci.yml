@@ -28,6 +28,7 @@ jobs:
           posts_dir: './tests/posts/'
         env:
           REPO_NAME: "BlogOps"
+          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
       # Use the output from the `hello` step
       - name: Get the action output
