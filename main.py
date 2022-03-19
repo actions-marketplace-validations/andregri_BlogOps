@@ -27,7 +27,7 @@ def get_new_files(files, status):
     """Return a subset of `files` with this `status`"""
     new_files = []
     for file in files:
-        if file.status == "added":
+        if file.status == status:
             new_files.append(file)
     return new_files
 
@@ -39,12 +39,15 @@ def main():
     POSTS_DIR = os.getenv("INPUT_POSTS_DIR")
 
     last_commit = get_last_commit(REPO_NAME)
-    new_files = get_files_in(last_commit.files, POSTS_DIR)
-    added_files = get_new_files(new_files, status="added")
+    #new_files = get_files_in(last_commit.files, POSTS_DIR)
+    #added_files = get_new_files(new_files, status="added")
+
+    new_files = get_files_in(last_commit.files, ".")
+    added_files = get_new_files(new_files, status="modified")
 
     my_output = f"{len(added_files)} new files in {POSTS_DIR}:"
     for file in added_files:
-        my_output += f'\n{file}'
+        my_output += f'\n{file.filename}'
 
     print(f"::set-output name=myOutput::{my_output}")
 
