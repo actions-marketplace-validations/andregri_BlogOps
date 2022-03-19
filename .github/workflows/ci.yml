@@ -26,6 +26,8 @@ jobs:
         id: hello_action
         with:
           posts_dir: './tests/posts/'
+        env:
+          REPO_NAME: "BlogOps"
 
       # Use the output from the `hello` step
       - name: Get the action output
