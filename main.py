@@ -47,7 +47,7 @@ def main():
 
     my_output = f"{len(added_files)} new files in {POSTS_DIR}:"
     for file in added_files:
-        my_output += f'\n{file.filename}'
+        my_output += f" {file.filename}"
 
     print(f"::set-output name=myOutput::{my_output}")
 
