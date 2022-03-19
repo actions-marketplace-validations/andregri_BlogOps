@@ -30,7 +30,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: hello_action
         with:
-          postsPath: './tests/posts/'
+          posts_dir: './tests/posts/'
 
       # Use the output from the `hello` step
       - name: Get the action output

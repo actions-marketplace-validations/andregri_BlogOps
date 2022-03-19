@@ -2,7 +2,7 @@ name: 'BlogOps'
 description: 'Synchronize your github pages posts to your main blog platforms'
 author: 'Andrea Grillo'
 inputs: 
-  postsPath:
+  posts_dir:
     description: 'Path of the posts folder'
     required: false
     default: './_posts/'
