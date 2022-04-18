@@ -5,6 +5,8 @@ jobs:
     name: continuous-integration
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Test action
         uses: ./ # Uses an action in the root directory
         id: hello_action
