@@ -15,6 +15,7 @@ jobs:
         env:
           REPO_NAME: "BlogOps"
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+          MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
       # Use the output from the `hello` step
       - name: Get the action output
         run: echo "The action output is ${{ steps.hello_action.outputs.myOutput }}" 
