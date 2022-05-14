@@ -6,9 +6,6 @@ inputs:
     description: 'Path of the posts folder'
     required: false
     default: './_posts/'
-outputs:
-  new_posts:
-    required: true
 runs:
   using: 'composite'
   steps:
