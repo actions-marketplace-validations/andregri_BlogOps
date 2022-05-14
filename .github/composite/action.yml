@@ -1,0 +1,29 @@
+name: 'BlogOps'
+description: 'Automate blogging'
+author: 'Andrea Grillo'
+inputs:
+  posts_dir:
+    description: 'Path of the posts folder'
+    required: false
+    default: './_posts/'
+outputs:
+  new_posts:
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.9
+        architecture: x64
+    - name: Install dependencies
+      shell: bash
+      working-directory: .
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run python script
+      shell: bash
+      working-directory: .
+      run: python main.py

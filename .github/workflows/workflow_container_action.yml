@@ -1,21 +1,19 @@
-name: Continuous Integration
+description: Use container action
 on: [push, pull_request]
 jobs:
-  ci:
-    name: continuous-integration
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Test action
-        uses: ./ # Uses an action in the root directory
-        id: hello_action
+        uses: ./
+        id: action
         with:
           posts_dir: './tests/posts/'
         env:
           REPO_NAME: "BlogOps"
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
           MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
-      # Use the output from the `hello` step
       - name: Get the action output
-        run: echo "The action output is ${{ steps.hello_action.outputs.myOutput }}" 
+        run: echo "The action output is ${{ steps.action.outputs.myOutput }}" 

@@ -33,7 +33,7 @@ def main():
     REPO_NAME = os.getenv("REPO_NAME")
     POSTS_DIR = os.getenv("INPUT_POSTS_DIR")
 
-    # Get modified file in the last commit
+    # Get new files in the last commit
     last_commit = get_last_commit(REPO_NAME)
     files = get_new_files(last_commit, POSTS_DIR)
 
@@ -68,7 +68,7 @@ def main():
             )
             my_output += f"Published {file.filename}\n"
         except RuntimeError as e:
-            my_output.append(f"Could not publish {file.filename}")
+            my_output.append(f"Could not publish {file.filename}\n")
 
     print(f"::set-output name=myOutput::{my_output}")
 

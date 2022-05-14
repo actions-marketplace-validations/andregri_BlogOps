@@ -1,0 +1,19 @@
+description: Use composite action
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Test action
+        uses: ./.github/composite/
+        id: action
+        with:
+          posts_dir: './tests/posts/'
+        env:
+          REPO_NAME: "BlogOps"
+          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+          MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
+      - name: Get the action output
+        run: echo "The action output is ${{ steps.action.outputs.myOutput }}" 
