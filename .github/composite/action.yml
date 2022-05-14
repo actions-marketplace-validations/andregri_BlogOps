@@ -1,6 +1,9 @@
 name: 'BlogOps'
 description: 'Automate blogging'
 author: 'Andrea Grillo'
+branding:
+  icon: 'upload'  
+  color: 'green'
 inputs:
   posts_dir:
     description: 'Path of the posts folder'
