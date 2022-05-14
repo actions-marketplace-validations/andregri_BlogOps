@@ -10,7 +10,7 @@ import base64
 
 def get_last_commit(repo_name):
     """Return last commit from repository `repo_name`"""
-    access_token = os.getenv("GH_ACCESS_TOKEN")
+    access_token = os.getenv("INPUT_GH_ACCESS_TOKEN")
     gh = Github(access_token)
 
     repo = gh.get_user().get_repo(repo_name)
@@ -30,7 +30,7 @@ def get_new_files(commit, dir):
 def main():
     load_dotenv()
 
-    REPO_NAME = os.getenv("REPO_NAME")
+    REPO_NAME = os.getenv("INPUT_REPO_NAME")
     POSTS_DIR = os.getenv("INPUT_POSTS_DIR")
 
     # Get new files in the last commit
@@ -38,7 +38,7 @@ def main():
     files = get_new_files(last_commit, POSTS_DIR)
 
     # Create mediumAPI client
-    token = os.getenv("MEDIUM_INTEGRATION_TOKEN")
+    token = os.getenv("INPUT_MEDIUM_INTEGRATION_TOKEN")
     client = pymediumapi.Client(token)
     client.authenticate()
 

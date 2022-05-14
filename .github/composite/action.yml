@@ -6,6 +6,15 @@ inputs:
     description: 'Path of the posts folder'
     required: false
     default: './_posts/'
+  gh_access_token:
+    description: 'Github token to read repository permission'
+    required: true
+  repo_name:
+    description: 'Name of repository containing blog posts'
+    required: true
+  medium_integration_token:
+    description: 'Token of personal Medium account'
+    required: true
 runs:
   using: 'composite'
   steps:
