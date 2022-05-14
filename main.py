@@ -31,7 +31,10 @@ def main():
     load_dotenv()
 
     REPO_NAME = os.getenv("INPUT_REPO_NAME")
+    print(f"REPO_NAME: {REPO_NAME}")
+
     POSTS_DIR = os.getenv("INPUT_POSTS_DIR")
+    print(f"POSTS_DIR: {POSTS_DIR}")
 
     # Get new files in the last commit
     last_commit = get_last_commit(REPO_NAME)
