@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Run action
-      uses: andregri/BlogOps@master
+      uses: andregri/BlogOps@v1
       with:
         posts_dir: 'path/to/posts/'
         repo_name: "BlogOps"
