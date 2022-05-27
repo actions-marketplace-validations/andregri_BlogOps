@@ -36,8 +36,3 @@ runs:
       shell: bash
       working-directory: .
       run: python main.py
-      env:
-        INPUT_POSTS_DIR: ${{ inputs.posts_dir }}
-        INPUT_REPO_NAME: ${{ inputs.repo_name }}
-        INPUT_MEDIUM_INTEGRATION_TOKEN: ${{ inputs.medium_integration_token }}
-        INPUT_GH_ACCESS_TOKEN: ${{ inputs.gh_access_token }}
